@@ -9,5 +9,9 @@ jobs:
       uses: thedoctor0/zip-release@0.7.5
       with:
         type: 'zip'
-        filename: 'release.zip&e&lBSG big items overlay.zip'
+        filename: '&e&lBSG big items overlay.zip'
         directory: 'resourcepack/'
+    - name: Upload Release
+      uses: ncipollo/release-action@v1.12.0
+      with:
+        artifacts: "&e&lBSG big items overlay.zip"
