@@ -1,4 +1,4 @@
-name: Create Archive
+name: Create and Upload ZIP to Release
 on:
   push:
     tags:
@@ -8,15 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Archive Release
-      uses: thedoctor0/zip-release@0.7.5
-      with:
-        type: 'zip'
-        filename: 'overlay.zip'
-        directory: 'resourcepack/'
+    - name: Create ZIP file
+        run: zip -r '&e&lBSG big items overlay.zip' ./resourcepack
     - name: Upload Release
       uses: ncipollo/release-action@v1.12.0
       with:
-        artifacts: "reourcepack/overlay.zip"
+        artifacts: "&e&lBSG big items overlay.zip"
         token: ${{ secrets.GITHUB_TOKEN }}        
