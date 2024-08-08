@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Create ZIP file
-      run: zip -r '&e&lBSG big items overlay.zip' ./resourcepack
+      run: zip -r '&e&lBSG big items overlay.zip' ./resourcepack/*
     - name: Upload Release
       uses: ncipollo/release-action@v1.12.0
       with:
